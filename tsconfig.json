@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@css/*": ["stitches/*"],
+      "@pub/*": ["public/*"],
+      "@pages/*": ["pages/*"]
+    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
