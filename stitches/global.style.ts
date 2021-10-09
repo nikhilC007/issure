@@ -13,7 +13,7 @@ const globalStyle = globalCss({
   },
   body: {
     color: '$white',
-    background: '$dark',
+    background: '$white8',
     overflowX: 'hidden',
   },
   '::selection': {

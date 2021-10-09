@@ -1,15 +1,14 @@
 import { createStitches } from '@stitches/react'
 
-import { SkyBlue, White } from 'kraftuur'
+import { Black, SkyBlue, White } from 'kraftuur'
 
 export const { css, styled, globalCss, getCssText, keyframes } = createStitches(
   {
     theme: {
       colors: {
-        main: '#61C3B',
-        dark: '#2A2A39',
+        main: '#275efe',
+        ...Black,
         ...White,
-        ...SkyBlue,
       },
       fontSizes: {
         1: '14px',
