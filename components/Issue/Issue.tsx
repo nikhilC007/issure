@@ -1,6 +1,7 @@
 import React from 'react'
 import { Calendar, User } from 'react-feather'
 
+import { label } from '@components/Search/Search'
 import * as S from './Issue.style'
 
 const Issue: React.FC<{
@@ -9,7 +10,7 @@ const Issue: React.FC<{
   author: string
   link: string
   number: number
-  labels: any[]
+  labels: label[]
 }> = ({ title, date, author, link, number, labels }) => {
   return (
     <S.IssueBox>
@@ -23,7 +24,7 @@ const Issue: React.FC<{
         <User /> Created by {author}
       </S.IssueDescription>
       <S.Labels>
-        {labels.map((label, index) => (
+        {labels.map((label: any, index) => (
           <S.Label key={index} href={label.url} target='_blank'>
             {label.name}
           </S.Label>

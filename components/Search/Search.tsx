@@ -5,6 +5,18 @@ import LiquidButton from '@components/LiquidButton'
 import { Octokit } from '@octokit/rest'
 import Issue from '@components/Issue/Issue'
 
+export type label =
+  | string
+  | {
+      id?: number | undefined
+      node_id?: string | undefined
+      url?: string | undefined
+      name?: string | undefined
+      description?: string | null | undefined
+      color?: string | null | undefined
+      default?: boolean | undefined
+    }
+
 const Search: React.FC = () => {
   const octo = new Octokit({})
 
@@ -16,7 +28,7 @@ const Search: React.FC = () => {
   const [author, setAuthor] = React.useState<string>()
   const [link, setLink] = React.useState<string>()
   const [number, setNumber] = React.useState<number>()
-  const [tags, setTags] = React.useState<any[]>()
+  const [tags, setTags] = React.useState<label[]>()
 
   const [repoDetails, setRepoDetails] = React.useState([''])
 
