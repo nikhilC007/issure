@@ -50,6 +50,8 @@ const Search: React.FC = () => {
       .then((issues) => {
         console.log(repoDetails)
 
+        issues = issues.filter((el) => !Boolean(el.pull_request));
+
         let issueNumbers = []
 
         for (let i = 0; i < issues.length; i++) {
