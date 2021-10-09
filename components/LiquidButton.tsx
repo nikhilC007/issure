@@ -3,12 +3,12 @@
   https://codepen.io/aaroniker/pen/ZEpEvdz 
 */
 
-import React from 'react'
+import * as React from 'react'
 
-const LiquidButton: React.FC = () => {
+const LiquidButton: React.FC<{ GetIssues: () => void }> = ({ GetIssues }) => {
   return (
     <>
-      <button className='btn'>
+      <button className='btn' onClick={GetIssues}>
         <span>Fetch Issue</span>
         <svg preserveAspectRatio='none' viewBox='0 0 132 45'>
           <g clipPath='url(#clip)' filter='url(#goo-big)'>
