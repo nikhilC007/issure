@@ -4,14 +4,10 @@ export const IssueBox = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  marginTop: 100,
   background: '$white10',
   padding: '30px 40px',
-  boxShadow: '0px 0px 20px 10px #00000011',
   transition: '0.2s linear',
-  '&:hover': {
-    boxShadow: '0px 0px 50px 10px #00000021',
-  },
+  borderRadius: 10,
 })
 
 export const IssueTitle = styled('a', {
@@ -28,6 +24,14 @@ export const IssueDescription = styled('p', {
   marginTop: 10,
   svg: {
     marginRight: 10,
+  },
+  a: {
+    textDecoration: 'none',
+    color: '$white1',
+    marginLeft: 4,
+    '&:hover': {
+      color: '$main',
+    },
   },
 })
 

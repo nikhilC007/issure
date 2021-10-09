@@ -20,7 +20,8 @@ const globalStyle = globalCss({
     overflowX: 'hidden',
   },
   '::selection': {
-    background: '#4560F060',
+    background: '#000',
+    color: '#fff',
   },
   img: {
     userSelect: 'none',

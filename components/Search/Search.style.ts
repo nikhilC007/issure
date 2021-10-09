@@ -1,4 +1,5 @@
 import { styled } from '@css/theme.config'
+import { Red } from 'kraftuur'
 
 export const SearchContainer = styled('div', {
   display: 'flex',
@@ -6,8 +7,15 @@ export const SearchContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  height: '90vh',
   width: '100vw',
+})
+
+export const SearchInputContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '70vh',
 })
 
 export const SearchInput = styled('input', {
@@ -18,5 +26,9 @@ export const SearchInput = styled('input', {
   color: '$black9',
   textAlign: 'center',
   fontSize: '$5',
-  marginBottom: 50,
+})
+
+export const SearchError = styled('p', {
+  color: Red.red5,
+  margin: '20px 0px 50px 0px',
 })

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import globalStyles from '@css/global.style'
 
+import Header from '@components/Head'
 import Search from '@components/Search/Search'
 import Footer from '@components/Footer'
 
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <Header />
       <Search />
       <Footer />
     </>

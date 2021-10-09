@@ -23,12 +23,13 @@ const Search: React.FC = () => {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   const [title, setTitle] = React.useState<string>()
-  const [description, setDescription] = React.useState<string>()
   const [date, setDate] = React.useState<string>()
   const [author, setAuthor] = React.useState<string>()
   const [link, setLink] = React.useState<string>()
+  const [authorLink, setAuthorLink] = React.useState<string>()
   const [number, setNumber] = React.useState<number>()
   const [tags, setTags] = React.useState<label[]>()
+  const [error, setError] = React.useState(false)
 
   const [repoDetails, setRepoDetails] = React.useState([''])
 
@@ -41,8 +42,8 @@ const Search: React.FC = () => {
   const FetchIssues = () => {
     octo
       .paginate(octo.issues.listForRepo, {
-        owner: 'codemyst',
-        repo: 'pastemyst',
+        owner: repoDetails[0],
+        repo: repoDetails[1],
       })
       .then((issues) => {
         console.log(repoDetails)
@@ -58,32 +59,41 @@ const Search: React.FC = () => {
         )
 
         setTitle(issues[issueIndex].title)
-        setDescription(issues[issueIndex].body_text)
         setDate(issues[issueIndex].created_at)
         setAuthor(issues[issueIndex].user?.login)
+        setAuthorLink(issues[issueIndex].user?.html_url)
         setLink(issues[issueIndex].html_url)
         setNumber(issues[issueIndex].number)
         setTags(issues[issueIndex].labels)
 
-        console.log(issues[issueIndex].labels)
+        setError(false)
       })
+      .catch((err) => setError(true))
   }
 
   return (
     <S.SearchContainer>
-      <S.SearchInput
-        placeholder='URL, or username/repo'
-        spellCheck='false'
-        ref={inputRef}
-      />
-      <LiquidButton GetIssues={FetchIssues} />
-      {title == undefined ? (
+      <S.SearchInputContainer>
+        <S.SearchInput
+          placeholder='URL, or username/repo'
+          spellCheck='false'
+          ref={inputRef}
+        />
+        <S.SearchError>
+          {error
+            ? "Whoops! We couldn't find any issues for that repository. Double check the spelling!"
+            : ''}
+        </S.SearchError>
+        <LiquidButton GetIssues={FetchIssues} />
+      </S.SearchInputContainer>
+      {tags == undefined ? (
         ''
       ) : (
         <Issue
           title={title!}
           date={date!}
           author={author!}
+          authorURL={authorLink!}
           link={link!}
           number={number!}
           labels={tags!}

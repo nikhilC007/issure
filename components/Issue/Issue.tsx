@@ -8,29 +8,51 @@ const Issue: React.FC<{
   title: string
   date: string
   author: string
+  authorURL: string
   link: string
   number: number
   labels: label[]
-}> = ({ title, date, author, link, number, labels }) => {
+}> = ({ title, date, author, authorURL, link, number, labels }) => {
+  const unixDate = new Date(date)
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+  const year = unixDate.getFullYear()
+  const month = months[unixDate.getMonth()]
+  const day = unixDate.getDate()
+  const formattedDate = day + ' ' + month + ' ' + year
+
   return (
     <S.IssueBox>
-      <S.IssueTitle href={link}>
-        #{number} {title}
+      <S.IssueTitle href={link} target='_blank'>
+        #{number} {title.length > 30 ? title.slice(0, 30) + '...' : title}
       </S.IssueTitle>
       <S.IssueDescription>
-        <Calendar /> Created on {date}
+        <Calendar /> Created on {formattedDate}
       </S.IssueDescription>
       <S.IssueDescription>
-        <User /> Created by {author}
+        <User /> Created by
+        <a href={authorURL} target='_blank'>
+          {author}
+        </a>
       </S.IssueDescription>
       <S.Labels>
-        {labels.map((label: any, index) => (
+        {labels.slice(0, 3).map((label: any, index) => (
           <S.Label key={index} href={label.url} target='_blank'>
             {label.name}
           </S.Label>
         ))}
-        {/* <S.Label>Test</S.Label>
-        <S.Label>JavaScript</S.Label> */}
       </S.Labels>
     </S.IssueBox>
   )
