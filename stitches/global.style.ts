@@ -11,6 +11,9 @@ const globalStyle = globalCss({
   html: {
     overflowX: 'hidden',
   },
+  'div, button': {
+    userSelect: 'none',
+  },
   body: {
     color: '$white',
     background: '$white8',

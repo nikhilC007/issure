@@ -5,22 +5,15 @@ import LiquidButton from '@components/LiquidButton'
 import { Octokit } from '@octokit/rest'
 import Issue from '@components/Issue/Issue'
 
-export type label = {
-  color: string
-  default: boolean
-  description: string
-  id: number
-  name: string
-  node_id: string
-  url: string
-}
-
 const Search: React.FC = () => {
   const octo = new Octokit({})
 
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   const [title, setTitle] = React.useState<string>()
+  const [description, setDescription] = React.useState<string>()
+  const [date, setDate] = React.useState<string>()
+  const [author, setAuthor] = React.useState<string>()
   const [link, setLink] = React.useState<string>()
   const [number, setNumber] = React.useState<number>()
   const [tags, setTags] = React.useState<any[]>()
@@ -53,14 +46,14 @@ const Search: React.FC = () => {
         )
 
         setTitle(issues[issueIndex].title)
+        setDescription(issues[issueIndex].body_text)
+        setDate(issues[issueIndex].created_at)
+        setAuthor(issues[issueIndex].user?.login)
         setLink(issues[issueIndex].html_url)
         setNumber(issues[issueIndex].number)
         setTags(issues[issueIndex].labels)
 
-        console.log(title)
-        console.log(link)
-        console.log(number)
-        console.log(tags)
+        console.log(issues[issueIndex].labels)
       })
   }
 
@@ -72,7 +65,18 @@ const Search: React.FC = () => {
         ref={inputRef}
       />
       <LiquidButton GetIssues={FetchIssues} />
-      <Issue title={title!} link={link!} number={number!} labels={tags!} />
+      {title == undefined ? (
+        ''
+      ) : (
+        <Issue
+          title={title!}
+          date={date!}
+          author={author!}
+          link={link!}
+          number={number!}
+          labels={tags!}
+        />
+      )}
     </S.SearchContainer>
   )
 }
