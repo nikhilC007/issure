@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/69592270/126839768-5de77924-ef76-40c3-a927-e48e846b98d5.png" />
+  <a href="https://issure.vercel.app/">
+    <h2 align="center">Issure</h2>
+  </a>
+</p> 
+<p align="center">🤔 Confused on what issue to work on next? Issure fetches a random issue from your GitHub repository to help you decide!</p>
+<p align="center">
+  <a href="https://www.figma.com/file/imEzzbwD0dUNAJg2cdF4MK/Banner">Design Board</a>
+    ·
+  <a href="https://issure.vercel.app/">Demo</a>
+ </p>
 
-## Getting Started
+# 🚀 Quickstart
 
-First, run the development server:
+Run the website locally
+
+```
+git clone https://github.com/harshhhdev/issure.git
+```
+
+## Setting up the project
 
 ```bash
-npm run dev
-# or
+cd issure
+
+# Install deps
+yarn
+```
+
+## Starting server
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Server should now be running on [localhost](https://localhost:3000)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# 🔧 Tools Used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Kraftuur](https://harshhhdev.github.io/kraftuur/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Ocktokit](https://github.com/octokit/octokit.js)
+- [Next.js](https://nextjs.org/)
+- [Stitches](https://stitches.dev/)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+- [Figma](https://www.figma.com/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# 🤞 Contributing
 
-## Learn More
+After setting up the project, and making changes:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```git
+git add .
+git commit -m "commit message"
+git push YOUR_REPO_URL YOUR_BRANCH
+```
