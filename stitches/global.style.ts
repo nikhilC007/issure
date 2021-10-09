@@ -29,7 +29,7 @@ const globalStyle = globalCss({
     background: 'none',
   },
   'body::-webkit-scrollbar-thumb': {
-    background: '$main',
+    background: '$white5',
   },
 })
 
