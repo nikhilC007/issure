@@ -57,6 +57,7 @@ const Footer: React.FC = () => {
         <FooterLink
           href='https://github.com/harshhhdev/issure'
           target='_blank'
+          rel='noreferrer'
           text
         >
           <Icons.Code />
@@ -65,7 +66,12 @@ const Footer: React.FC = () => {
         <Icons.Heart />
         <FooterText>
           and{' '}
-          <FooterLink href='https://nextjs.org' target='_blank' text>
+          <FooterLink
+            href='https://nextjs.org'
+            target='_blank'
+            rel='noreferrer'
+            text
+          >
             Next.js
           </FooterLink>
         </FooterText>
@@ -73,7 +79,12 @@ const Footer: React.FC = () => {
       <FooterWrapper container>
         <FooterText>
           © 2021{' '}
-          <FooterLink href='https://harshhhdev.github.io/' target='_blank' text>
+          <FooterLink
+            href='https://harshhhdev.github.io/'
+            target='_blank'
+            rel='noreferrer'
+            text
+          >
             Harsh Singh
           </FooterLink>
         </FooterText>
@@ -81,10 +92,18 @@ const Footer: React.FC = () => {
           <FooterLink href='https://github.com/harshhhdev/' target='_blank'>
             <Icons.GitHub />
           </FooterLink>
-          <FooterLink href='https://twitter.com/harshhhdev/' target='_blank'>
+          <FooterLink
+            href='https://twitter.com/harshhhdev/'
+            target='_blank'
+            rel='noreferrer'
+          >
             <Icons.Twitter />
           </FooterLink>
-          <FooterLink href='https://dribbble.com/harshhhdev/' target='_blank'>
+          <FooterLink
+            href='https://dribbble.com/harshhhdev/'
+            target='_blank'
+            rel='noreferrer'
+          >
             <Icons.Dribbble />
           </FooterLink>
         </FooterWrapper>

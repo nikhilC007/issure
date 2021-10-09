@@ -35,7 +35,7 @@ const Issue: React.FC<{
 
   return (
     <S.IssueBox>
-      <S.IssueTitle href={link} target='_blank'>
+      <S.IssueTitle href={link} target='_blank' rel='noreferrer'>
         #{number} {title.length > 30 ? title.slice(0, 30) + '...' : title}
       </S.IssueTitle>
       <S.IssueDescription>
@@ -43,13 +43,18 @@ const Issue: React.FC<{
       </S.IssueDescription>
       <S.IssueDescription>
         <User /> Created by
-        <a href={authorURL} target='_blank'>
+        <a href={authorURL} target='_blank' rel='noreferrer'>
           {author}
         </a>
       </S.IssueDescription>
       <S.Labels>
         {labels.slice(0, 3).map((label: any, index) => (
-          <S.Label key={index} href={label.url} target='_blank'>
+          <S.Label
+            key={index}
+            href={label.url}
+            target='_blank'
+            rel='noreferrer'
+          >
             {label.name.length > 12
               ? label.name.slice(0, 12) + '...'
               : label.name}
