@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/69592270/126839768-5de77924-ef76-40c3-a927-e48e846b98d5.png" />
+  <img src="https://user-images.githubusercontent.com/69592270/136647922-ee23c57a-f27f-4748-b046-265519765e00.png" />
   <a href="https://issure.vercel.app/">
     <h2 align="center">Issure</h2>
   </a>
 </p> 
 <p align="center">🤔 Confused on what issue to work on next? Issure fetches a random issue from your GitHub repository to help you decide!</p>
 <p align="center">
-  <a href="https://www.figma.com/file/imEzzbwD0dUNAJg2cdF4MK/Banner">Design Board</a>
+  <a href="https://www.figma.com/file/imEzzbwD0dUNAJg2cdF4MK/Issure">Design Board</a>
     ·
   <a href="https://issure.vercel.app/">Demo</a>
  </p>
