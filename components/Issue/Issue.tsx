@@ -50,7 +50,9 @@ const Issue: React.FC<{
       <S.Labels>
         {labels.slice(0, 3).map((label: any, index) => (
           <S.Label key={index} href={label.url} target='_blank'>
-            {label.name}
+            {label.name.length > 12
+              ? label.name.slice(0, 12) + '...'
+              : label.name}
           </S.Label>
         ))}
       </S.Labels>

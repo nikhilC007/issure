@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
+import React from 'react'
 import globalStyles from '@css/global.style'
 
 import Header from '@components/Head'
 import Search from '@components/Search/Search'
 import Footer from '@components/Footer'
 
-const Home: NextPage = () => {
+const Home: React.FC = () => {
   globalStyles()
 
   return (
