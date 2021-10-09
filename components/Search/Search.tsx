@@ -35,7 +35,9 @@ const Search: React.FC = () => {
 
   React.useEffect(() => {
     inputRef.current!.addEventListener('change', () => {
-      setRepoDetails(inputRef.current!.value.split('/'))
+      inputRef.current!.value.startsWith('http')
+        ? setRepoDetails(inputRef.current!.value.slice(19).split('/'))
+        : setRepoDetails(inputRef.current!.value.split('/'))
     })
   }, [])
 
