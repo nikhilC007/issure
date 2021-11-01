@@ -79,7 +79,7 @@ const Search: React.FC = () => {
     <S.SearchContainer>
       <S.SearchInputContainer>
         <S.SearchInput
-          placeholder='URL, or username/repo'
+          placeholder='Enter URL, or username/repo to search an issue in'
           spellCheck='false'
           ref={inputRef}
         />
